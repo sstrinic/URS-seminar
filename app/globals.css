@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --textColor: #001f3f;
+  --mainColor: #0E4A87;
+  --otherTextColor: #333333;
+  --buttonColor: #0d8219;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  font-family: "Poppins",Helvetica;
+  font-size: 17px;
+  margin:auto;
+}
+
+main {
+  min-height: calc(100vh - 31vh);
+}
+
+header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: var(--mainColor);
+  z-index: 2;
+}
+
+footer {
+  background-color: var(--mainColor);
+}
+
+.containerHeader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-width: 1092px;
+  margin: 0 auto;
+  padding: 0 15px;
+  text-align: center;
+  min-height: 7vh;
+}
+
+.linerz h2::after, .linerz h2::before {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 2px;
+  background-color: var(--textColor);
+  margin: 5px auto;
+}
+
+.scheduleButton{
+  display: block;
+  padding: 10px 16px;
+  background-color: var(--buttonColor);
+  font-size: 18px;
+  line-height: 1.5;
+  border-radius: 12px;
+  cursor: pointer;
+  color: white;
+}
+
+header h2 {
+  padding: 12px 0;
+  font-size: 30px;
+}
+
+@media only screen and (max-width: 768px) {
+  .containerHeader {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+  }
+
+  header nav {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+  }
+
+  header a {
+    align-self: flex-start;
+    margin: auto 0;
+  }
+
+  header h2 {
+    font-size: 25px;
+  }
+
+  nav a {
+      font-size: medium;
+  }
+}
