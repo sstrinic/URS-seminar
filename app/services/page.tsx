@@ -1,9 +1,7 @@
 import styles from './services.module.css';
-import contentfulService from "@/lib/contentfulClient";
 import Image from "next/image";
 
 const Services = async () => {
-  const allServices = await contentfulService.getAllServices();
 
   return (
     <main className="max-w-[1092px] mx-auto mt-8 p-6 max-md:py-0 bg-white">
@@ -13,25 +11,6 @@ const Services = async () => {
       </div>
       <div className='mt-4'>
         <ul className="grid grid-cols-1 lg:grid-cols-2 gap-5">
-          {allServices.map((service) => {
-            return (
-              <li key={service.title} className='text-center flex flex-col'>
-                <div className={styles.transformImg}>
-                  <Image
-                    src={service.img}
-                    alt={service.title}
-                    width={1000}
-                    height={1000}
-                    className="rounded-md"
-                  />
-                  <div className={styles.serviceText}>
-                    <span>{service.text}</span>
-                  </div>
-                </div>
-                <p className='text-xl font-semibold text-gray-700'>{service.title}</p>
-              </li>
-            );
-          })}
         </ul>
       </div>
     </main>
