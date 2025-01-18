@@ -9,8 +9,6 @@ export type Page = {
 const pages: Page[] = [
   { href: "/", title: "Home" },
   { href: "/services", title: "Services" },
-  { href: "/about", title: "About Us" },
-  { href: "/cms/blog", title: "Blog" },
   { href: "/contact", title: "Contact" },
 ];
 
