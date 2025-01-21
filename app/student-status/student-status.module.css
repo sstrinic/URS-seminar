@@ -1,0 +1,97 @@
+.studentStatusContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: white;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+}
+
+.studentStatusContainer h1 {
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+.studentStatusContainer h2 {
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #34495e;
+}
+
+.studentStatusContainer table {
+    width: 70%;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ecf0f1;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.studentStatusContainer th,
+.studentStatusContainer td {
+    padding: 15px 20px;
+    border: 1px solid #bdc3c7;
+    text-align: center;
+    font-size: 1em;
+    position: relative;
+}
+
+.studentStatusContainer th {
+    background-color: #3498db;
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.studentStatusContainer tr:nth-child(even) {
+    background-color: #f4f6f7;
+}
+
+.courseRow {
+    position: relative;
+}
+
+.detailsButton {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.detailsButton:hover {
+    background-color: #2980b9;
+}
+
+.courseDetails {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #bdc3c7;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    border-radius: 8px;
+    font-size: 1em;
+    position: relative;
+}
+
+.closeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    color: #333;
+}
+
+.closeButton:hover {
+    color: #e74c3c;
+}

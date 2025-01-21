@@ -11,9 +11,9 @@ export type Page = {
 };
 
 const pages: Page[] = [
-  { href: "/", title: "Home" },
-  { href: "/services", title: "Services" },
-  { href: "/contact", title: "Contact" },
+  { href: "/login", title: "Log In" },
+  { href: "/student-status", title: "Student View" },
+  { href: "/professor-view", title: "Professor View" },
 ];
 
 const NavBar = () => {
@@ -27,7 +27,7 @@ const NavBar = () => {
   return (
     <header>
       <div className="containerHeader font-semibold tracking-wider">
-        <Link href={"/"}><h2 className="linerz text-white font-thin tracking-[2.96px] [text-shadow:0px_5px_4px_#000000bd]">Ordinacija Horvat<span className="relative text-xs align-top">®</span></h2></Link>
+        <Link href={"/"}><h2 className="linerz text-white font-thin tracking-[2.96px] [text-shadow:0px_5px_4px_#000000bd]">Attendance app<span className="relative text-xs align-top">®</span></h2></Link>
         <div
           className={`self-end top-[19px] absolute ${styles.hamburgerBar} ${isOpen && styles.openHamburgerBar
             }`}
@@ -61,7 +61,7 @@ const NavBar = () => {
                     className={cn(
                       "text-white py-[8px] px-[11px] rounded-lg",
                       {
-                        "text-white pointer-events-none spaner bg-[#0d8219]":
+                        "text-white pointer-events-none spaner bg-[#2980b9]":
                           pathname === href,
                       }
                     )}

@@ -9,7 +9,7 @@
   --textColor: #001f3f;
   --mainColor: #0E4A87;
   --otherTextColor: #333333;
-  --buttonColor: #0d8219;
+  --buttonColor: #3498db;
 }
 
 @media (prefers-color-scheme: dark) {
