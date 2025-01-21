@@ -7,9 +7,9 @@ export type Page = {
 };
 
 const pages: Page[] = [
-  { href: "/", title: "Log in" },
-  { href: "/services", title: "Student View" },
-  { href: "/contact", title: "Profesor View" },
+  { href: "/login", title: "Log In" },
+  { href: "/student-status", title: "Student View" },
+  { href: "/professor-view", title: "Professor View" },
 ];
 
 const Footer = () => (
@@ -26,7 +26,7 @@ const Footer = () => (
             </li>
           ))}
         </ul>
-         
+
       </div>
       <p className="font-thin text-xs">
         ©2025. Attendance app. All Rights Reserved.

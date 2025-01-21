@@ -27,7 +27,7 @@ body {
 }
 
 main {
-  min-height: calc(100vh - 31vh);
+  min-height: calc(100vh - 25vh);
 }
 
 header {
