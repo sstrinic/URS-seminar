@@ -1,0 +1,145 @@
+.professorStatusContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f7f9fb;
+    font-family: 'Roboto', sans-serif;
+    color: #2c3e50;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.professorStatusContainer h1 {
+    margin-bottom: 20px;
+    font-size: 2.8em;
+    color: #2c3e50;
+    font-weight: bold;
+    text-align: center;
+}
+
+.professorStatusContainer h2 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 2.2em;
+    color: #34495e;
+    text-align: center;
+}
+
+.professorDetails {
+    width: 70%;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    line-height: 1.5;
+}
+
+.professorDetails p {
+    margin: 10px 0;
+    font-size: 1.1em;
+}
+
+.professorStatusContainer table {
+    width: 70%;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.professorStatusContainer th,
+.professorStatusContainer td {
+    padding: 15px 20px;
+    border: 1px solid #bdc3c7;
+    text-align: center;
+    font-size: 1em;
+}
+
+.professorStatusContainer th {
+    background-color: #3498db;
+    color: #ffffff;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.professorStatusContainer tr:nth-child(even) {
+    background-color: #f4f6f7;
+}
+
+.detailsButton {
+    background-color: #3498db;
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.detailsButton:hover {
+    background-color: #2980b9;
+}
+
+.subjectRow:hover {
+    background-color: #ecf0f1;
+    transition: background-color 0.3s ease;
+}
+
+.studentDetails {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    text-align: center;
+}
+
+.studentDetails h3 {
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    color: #34495e;
+}
+
+.studentDetails table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+.studentDetails th,
+.studentDetails td {
+    padding: 10px 15px;
+    border: 1px solid #bdc3c7;
+    text-align: center;
+    font-size: 1em;
+}
+
+.studentDetails th {
+    background-color: #3498db;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.studentDetails tr:nth-child(even) {
+    background-color: #f4f6f7;
+}
+
+.closeButton {
+    background-color: #e74c3c;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    float: right;
+}
+
+.closeButton:hover {
+    background-color: #c0392b;
+}

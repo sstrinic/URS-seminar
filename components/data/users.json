@@ -1,0 +1,255 @@
+{
+  "users": [
+    {
+      "uid": "RFID123456",
+      "name": "Anna",
+      "surname": "Martinez",
+      "role": "student",
+      "college_subjects": [
+        {
+          "name": "Mathematics",
+          "attendance": 18,
+          "total_classes": 20
+        },
+        {
+          "name": "Computer Science",
+          "attendance": 19,
+          "total_classes": 20
+        },
+        {
+          "name": "Artificial Intelligence",
+          "attendance": 17,
+          "total_classes": 20
+        },
+        {
+          "name": "Robotics",
+          "attendance": 16,
+          "total_classes": 20
+        },
+        {
+          "name": "Data Structures",
+          "attendance": 20,
+          "total_classes": 20
+        },
+        {
+          "name": "Algorithms",
+          "attendance": 18,
+          "total_classes": 20
+        },
+        {
+          "name": "Discrete Mathematics",
+          "attendance": 19,
+          "total_classes": 20
+        }
+      ],
+      "date_of_registration": "2019-09-15",
+      "short_description": "A first-year computer science student with a passion for AI and robotics. Loves participating in hackathons.",
+      "extra_info": {
+        "year": "Freshman",
+        "hobbies": ["Coding", "Chess", "Gaming"]
+      }
+    },
+    {
+      "uid": "RFID234567",
+      "name": "Liam",
+      "surname": "Johnson",
+      "role": "student",
+      "college_subjects": [
+        {
+          "name": "Robotics",
+          "attendance": 25,
+          "total_classes": 30
+        },
+        {
+          "name": "Astronomy",
+          "attendance": 28,
+          "total_classes": 30
+        },
+        {
+          "name": "Quantum Mechanics",
+          "attendance": 26,
+          "total_classes": 30
+        },
+        {
+          "name": "Thermodynamics",
+          "attendance": 27,
+          "total_classes": 30
+        },
+        {
+          "name": "Astrophysics",
+          "attendance": 29,
+          "total_classes": 30
+        },
+        {
+          "name": "Linear Algebra",
+          "attendance": 30,
+          "total_classes": 30
+        },
+        {
+          "name": "Statistics",
+          "attendance": 28,
+          "total_classes": 30
+        },
+        {
+          "name": "Electromagnetism",
+          "attendance": 27,
+          "total_classes": 30
+        }
+      ],
+      "date_of_registration": "2018-11-20",
+      "short_description": "A curious mind exploring the universe, aspiring to become an astrophysicist. Regularly organizes stargazing events.",
+      "extra_info": {
+        "year": "Sophomore",
+        "club_membership": "Astronomy Club"
+      }
+    },
+    {
+      "uid": "RFID345678",
+      "name": "Sophia",
+      "surname": "Nguyen",
+      "role": "student",
+      "college_subjects": [
+        {
+          "name": "Economics",
+          "attendance": 23,
+          "total_classes": 25
+        },
+        {
+          "name": "Computer Science",
+          "attendance": 24,
+          "total_classes": 25
+        },
+        {
+          "name": "Marketing",
+          "attendance": 22,
+          "total_classes": 25
+        },
+        {
+          "name": "Finance",
+          "attendance": 23,
+          "total_classes": 25
+        },
+        {
+          "name": "Global Trade",
+          "attendance": 21,
+          "total_classes": 25
+        },
+        {
+          "name": "Entrepreneurship",
+          "attendance": 24,
+          "total_classes": 25
+        },
+        {
+          "name": "Leadership Studies",
+          "attendance": 23,
+          "total_classes": 25
+        },
+        {
+          "name": "Public Relations",
+          "attendance": 22,
+          "total_classes": 25
+        },
+        {
+          "name": "Robotics",
+          "attendance": 5,
+          "total_classes": 25
+        }
+      ],
+      "date_of_registration": "2017-03-05",
+      "short_description": "An ambitious student working towards launching her own startup. Enjoys reading about global markets.",
+      "extra_info": {
+        "year": "Junior",
+        "internships": ["Marketing Intern at XYZ Corp"]
+      }
+    },
+    {
+      "uid": "RFID456789",
+      "name": "Ethan",
+      "surname": "Patel",
+      "role": "student",
+      "college_subjects": [
+        {
+          "name": "History",
+          "attendance": 18,
+          "total_classes": 20
+        },
+        {
+          "name": "Philosophy",
+          "attendance": 20,
+          "total_classes": 20
+        },
+        {
+          "name": "Political Science",
+          "attendance": 19,
+          "total_classes": 20
+        },
+        {
+          "name": "World Cultures",
+          "attendance": 17,
+          "total_classes": 20
+        },
+        {
+          "name": "Archaeology",
+          "attendance": 16,
+          "total_classes": 20
+        },
+        {
+          "name": "Ethics",
+          "attendance": 18,
+          "total_classes": 20
+        },
+        {
+          "name": "Sociology",
+          "attendance": 20,
+          "total_classes": 20
+        },
+        {
+          "name": "Anthropology",
+          "attendance": 19,
+          "total_classes": 20
+        },
+        {
+          "name": "Modern World History",
+          "attendance": 18,
+          "total_classes": 20
+        }
+      ],
+      "date_of_registration": "2018-05-22",
+      "short_description": "A history buff who loves debating and exploring how ancient civilizations shaped modern life.",
+      "extra_info": {
+        "year": "Senior",
+        "hobbies": ["Debating", "Traveling", "Museum Visits"]
+      }
+    },
+    {
+      "uid": "RFID567890",
+      "name": "Dr. Olivia",
+      "surname": "Clark",
+      "role": "teacher",
+      "teaching_subjects": [
+        "Robotics",
+        "Computer Science",
+        "Algorithms"
+      ],
+      "date_of_registration": "2015-10-12",
+      "short_description": "A seasoned professor who nurtures creativity in her students, with three published novels to her name.",
+      "extra_info": {
+        "years_of_experience": 12,
+        "publications": ["The Wanderer", "Shadows of Time", "Dreaming in Ink"]
+      }
+    },
+    {
+      "uid": "RFID678901",
+      "name": "Professor James",
+      "surname": "Brown",
+      "role": "teacher",
+      "teaching_subjects": ["Engineering", "Mechanics", "Material Science"],
+      "date_of_registration": "2016-03-15",
+      "short_description": "A hands-on engineer with a knack for turning theoretical knowledge into practical solutions. Mentors students on real-world projects.",
+      "extra_info": {
+        "years_of_experience": 15,
+        "awards": ["Best Educator Award 2022", "Innovation in Teaching 2020"]
+      }
+    }
+  ]
+}
