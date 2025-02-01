@@ -25,9 +25,10 @@ type Student = {
   surname: string;
   college_subjects: {
     name: string;
-    attendance: number;  // Number of lectures attended
-    total_classes: number; // Total number of lectures
+    attendance: number;
+    total_classes: number;
   }[];
+  db_attendance?: number | null; // New field for DB attendance count
 };
 
 const ProfessorView: React.FC = () => {
@@ -39,9 +40,7 @@ const ProfessorView: React.FC = () => {
   useEffect(() => {
     // Fetch professor data from JSON
     const fetchProfessorData = () => {
-      const user = data.users.find(
-        (user: any) => user.role === "teacher" && user.teaching_subjects
-      );
+      const user = data.users.find((user: any) => user.role === "teacher");
 
       if (user && Array.isArray(user.teaching_subjects)) {
         const professor: Professor = {
@@ -68,7 +67,7 @@ const ProfessorView: React.FC = () => {
     fetchProfessorData();
   }, []);
 
-  const handleViewDetails = (subjectName: string) => {
+  const handleViewDetails = async (subjectName: string) => {
     setSelectedSubject(subjectName);
 
     // Fetch students enrolled in the selected subject
@@ -78,12 +77,39 @@ const ProfessorView: React.FC = () => {
         user.college_subjects.some((subject: any) => subject.name === subjectName)
     );
 
-    const mappedStudents = enrolledStudents.map((student: any) => ({
+    let mappedStudents = enrolledStudents.map((student: any) => ({
       uid: student.uid,
       name: student.name,
       surname: student.surname,
       college_subjects: student.college_subjects,
+      db_attendance: student.db_attendance, // Default to null
     }));
+
+    // If the selected subject is "Ugradbeni Računalni Sustavi", fetch attendance from the database
+    if (subjectName === "Ugradbeni Računalni Sustavi") {
+      try {
+        const response = await fetch("/api/attendance");
+        const attendanceData = await response.json();
+
+        // Count occurrences of each rfid_uid in the fetched data
+        const attendanceCountMap: Record<string, number> = attendanceData.reduce(
+          (acc: Record<string, number>, record: any) => {
+            acc[record.rfid_uid] = (acc[record.rfid_uid] || 0) + 1;
+            return acc;
+          },
+          {}
+        );
+
+        // Assign attendance count to each student
+        mappedStudents = mappedStudents.map(student => ({
+          ...student,
+          db_attendance: attendanceCountMap[student.uid] || null, // Default to 0 if no records found
+        }));
+
+      } catch (error) {
+        console.error("Failed to fetch attendance data", error);
+      }
+    }
 
     setStudents(mappedStudents);
   };
@@ -99,17 +125,17 @@ const ProfessorView: React.FC = () => {
 
   return (
     <div className={styles.professorStatusContainer}>
-      <h1>Welcome, Professor {professorData.name} {professorData.surname}!</h1>
+      <h1>Dobrodošli, {professorData.name} {professorData.surname}!</h1>
       <div className={styles.professorDetails}>
-        <p><strong>Description:</strong> {professorData.short_description}</p>
-        <p><strong>Date of Registration:</strong> {professorData.date_of_registration}</p>
+        <p><strong>Opis:</strong> {professorData.short_description}</p>
+        <p><strong>Datum registracije:</strong> {professorData.date_of_registration}</p>
       </div>
-      <h2>Your Teaching Subjects</h2>
+      <h2>Vaši kolegiji</h2>
       <table>
         <thead>
           <tr>
-            <th>Subject</th>
-            <th>Details</th>
+            <th>Kolegij</th>
+            <th>Detalji</th>
           </tr>
         </thead>
         <tbody>
@@ -121,7 +147,7 @@ const ProfessorView: React.FC = () => {
                   className={styles.detailsButton}
                   onClick={() => handleViewDetails(subject.name)}
                 >
-                  View Subject Details
+                  Klikni za više detalja
                 </button>
               </td>
             </tr>
@@ -132,14 +158,14 @@ const ProfessorView: React.FC = () => {
       {selectedSubject && (
         <div className={styles.studentDetails}>
           <button className={styles.closeButton} onClick={handleCloseDetails}>
-            Close
+            Zatvori
           </button>
-          <h3>Students Enrolled in {selectedSubject}</h3>
+          <h3>Studenti upisani na {selectedSubject}</h3>
           <table>
             <thead>
               <tr>
-                <th>Student Name</th>
-                <th>Attendance (%)</th>
+                <th>Ime Studenta</th>
+                <th>Dolasci</th>
               </tr>
             </thead>
             <tbody>
@@ -148,7 +174,19 @@ const ProfessorView: React.FC = () => {
                   (subject) => subject.name === selectedSubject
                 );
 
-                // Calculate the attendance percentage
+                // If "Ugradbeni Računalni Sustavi", use counted DB attendance
+                if (selectedSubject === "Ugradbeni Računalni Sustavi" && student.db_attendance !== null) {
+                  return (
+                    <tr key={student.uid}>
+                      <td>{student.name} {student.surname}</td>
+                      <td style={{ fontWeight: "bold", color: "#3498db" }}>
+                        {student.db_attendance} dolazaka
+                      </td>
+                    </tr>
+                  );
+                }
+
+                // Otherwise, use JSON data and calculate percentage
                 const attendancePercentage = subjectDetails
                   ? (subjectDetails.attendance / subjectDetails.total_classes) * 100
                   : null;

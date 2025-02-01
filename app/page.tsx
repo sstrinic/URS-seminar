@@ -11,7 +11,7 @@ export default function Home() {
       Korisnici mogu pregledati i upravljati statusima prisutnosti, pregledati povijest aktivnosti te generirati izvještaje. 
       Aplikacija je dizajnirana da poboljša administraciju i komunikaciju između studenata i nastavnog osoblja.
       </p>
-      <Link className="m-auto my-[15px]" href={"/student-status"}>
+      <Link className="m-auto my-[15px]" href={"/login"}>
         <span className="scheduleButton hover:bg-[#2980b9] transition duration-300">
           Pogledaj status studenata
         </span>

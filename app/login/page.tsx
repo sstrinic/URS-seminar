@@ -1,22 +1,30 @@
-'use client';
-import { useState } from 'react';
-import { FaUser, FaLock } from 'react-icons/fa';
+"use client";
+import { useState } from "react";
+import { FaUser, FaLock } from "react-icons/fa";
+import { useRouter } from "next/navigation"; // Importing the router
 
 function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
+  const [username, setUsername] = useState(""); // Updated from email to username
+  const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
   const [isSuccess, setIsSuccess] = useState(false);
+
+  const router = useRouter(); // Initialize the router for navigation
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (email === 'user@example.com' && password === 'password123') {
+    if (username === "student") {
       setIsSuccess(true);
-      setErrorMessage('');
+      setErrorMessage("");
+      router.push("/student-status"); // Redirect to student-status
+    } else if (username === "professor") {
+      setIsSuccess(true);
+      setErrorMessage("");
+      router.push("/professor-view"); // Redirect to professor-view
     } else {
       setIsSuccess(false);
-      setErrorMessage('Invalid email or password. Please try again.');
+      setErrorMessage("Invalid username or password. Please try again.");
     }
   };
 
@@ -36,19 +44,19 @@ function Login() {
         )}
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label htmlFor="email" className="block text-sm font-semibold text-gray-600">
-              Email
+            <label htmlFor="username" className="block text-sm font-semibold text-gray-600">
+              Username
             </label>
             <div className="flex items-center border rounded-md mt-1">
               <FaUser className="text-gray-400 mx-2" />
               <input
-                type="email"
-                id="email"
-                name="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                type="text"
+                id="username"
+                name="username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
                 required
-                placeholder="Enter your email"
+                placeholder="Enter your username"
                 className="w-full p-2 border-none focus:outline-none focus:ring"
               />
             </div>
@@ -79,7 +87,7 @@ function Login() {
           </button>
         </form>
         <p className="text-sm text-center text-gray-600 mt-4">
-          Don&apos;t have an account?{' '}
+          Don&apos;t have an account?{" "}
           <a href="/signup" className="text-[#1563B2] hover:underline">
             Sign up
           </a>
