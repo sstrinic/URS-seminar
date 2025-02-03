@@ -3,19 +3,16 @@ import sqlite3 from "sqlite3";
 import { open } from "sqlite";
 import path from "path";
 
-// Function to open the SQLite database
 const openDB = async () => {
   return open({
-    filename: path.join(process.cwd(), "components/data/attendance.db"), // Adjust path if needed
+    filename: path.join(process.cwd(), "attendance.db"),
     driver: sqlite3.Database,
   });
 };
 
-// API Route to fetch attendance data
 export async function GET() {
   try {
     const db = await openDB();
-    // Use the correct column names: "rfid_uid" and "user"
     const attendanceRecords = await db.all("SELECT rfid_uid, user FROM attendance");
 
     return NextResponse.json(attendanceRecords);

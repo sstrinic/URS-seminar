@@ -5,3 +5,8 @@ npm-debug.log
 README.md
 .next
 .git
+logs.py
+reader.py
+start.sh
+data.db
+templates
