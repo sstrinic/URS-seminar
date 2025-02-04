@@ -40,34 +40,38 @@ const StudentStatus: React.FC = () => {
     <div className={styles.studentStatusContainer}>
       <h1>Dobro došao, student!</h1>
       <h2>Status posjećenosti</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Predmet</th>
-            <th>Posjećenost (%)</th>
-            <th>Detalji</th>
-          </tr>
-        </thead>
-        <tbody>
-          {courses.map((course) => (
-            <tr key={course.id} className={styles.courseRow}>
-              <td>{course.name}</td>
-              <td>{course.attendance}</td>
-              <td>
-                <button onClick={() => handleCourseClick(course)} className={styles.detailsButton}>Klikni za više detalja</button>
-              </td>
+      <div className={styles.tableWrapper}>
+        <table>
+          <thead>
+            <tr>
+              <th>Predmet</th>
+              <th>Posjećenost (%)</th>
+              <th>Detalji</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {courses.map((course) => (
+              <tr key={course.id} className={styles.courseRow}>
+                <td>{course.name}</td>
+                <td>{course.attendance}</td>
+                <td>
+                  <button onClick={() => handleCourseClick(course)} className={styles.detailsButton}>Klikni za više detalja</button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
       {selectedCourse && (
-        <div className={styles.courseDetails}>
-          <button onClick={handleCloseClick} className={styles.closeButton}>X</button>
-          <h3>Detalji za predmet: {selectedCourse.name}</h3>
-          <p>
-            Pohađano predavanje: {Math.round((selectedCourse.attendance / 100) * selectedCourse.totalLectures)} od {selectedCourse.totalLectures}
-          </p>
-          <p>Profesor: {selectedCourse.professor}</p>
+        <div className={styles.modalOverlay}>
+          <div className={styles.modalContent}>
+            <button onClick={handleCloseClick} className={styles.closeButton}>X</button>
+            <h3>Detalji za predmet: {selectedCourse.name}</h3>
+            <p>
+              Pohađano predavanje: {Math.round((selectedCourse.attendance / 100) * selectedCourse.totalLectures)} od {selectedCourse.totalLectures}
+            </p>
+            <p>Profesor: {selectedCourse.professor}</p>
+          </div>
         </div>
       )}
     </div>
