@@ -9,69 +9,69 @@
     color: #2c3e50;
     line-height: 1.6;
     min-height: 100vh;
-}
-
-/* Glavni naslov stranice */
-.studentStatusContainer h1 {
+  }
+  
+  /* Glavni naslov stranice */
+  .studentStatusContainer h1 {
     margin-bottom: 20px;
     font-size: 2.8em;
     color: #2c3e50;
     font-weight: bold;
     text-align: center;
-}
-
-/* Podnaslov za tablicu */
-.studentStatusContainer h2 {
+  }
+  
+  /* Podnaslov za tablicu */
+  .studentStatusContainer h2 {
     margin-top: 30px;
     margin-bottom: 15px;
     font-size: 2.2em;
     color: #34495e;
     text-align: center;
-}
-
-/* Kontejner za tablicu */
-.tableWrapper {
+  }
+  
+  /* Kontejner za tablicu */
+  .tableWrapper {
     display: flex;
     justify-content: center;
     width: 100%;
     margin-top: 20px;
     overflow-x: auto; /* Omogućava pomicanje tablice u horizontalnom smjeru */
-}
-
-/* Tablica */
-.studentStatusContainer table {
+  }
+  
+  /* Tablica */
+  .studentStatusContainer table {
     width: 70%;
     border-collapse: collapse;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     overflow: hidden;
     table-layout: auto; /* Omogućava automatsko prilagođavanje širine kolona */
-}
-
-/* Glava tablice (naslovi) */
-.studentStatusContainer th,
-.studentStatusContainer td {
+  }
+  
+  /* Glava tablice (naslovi) */
+  .studentStatusContainer th,
+  .studentStatusContainer td {
     padding: 15px 20px;
     border: 1px solid #bdc3c7;
     text-align: center;
     font-size: 1em;
-}
-
-/* Stil za naslove u tablici */
-.studentStatusContainer th {
+  }
+  
+  /* Stil za naslove u tablici */
+  .studentStatusContainer th {
     background-color: #3498db;
     color: #ffffff;
     font-weight: 600;
     text-transform: uppercase;
-}
-
-/* Svi parni redovi imaju svijetlu pozadinu */
-.studentStatusContainer tr:nth-child(even) {
+  }
+  
+  /* Svi parni redovi imaju svijetlu pozadinu */
+  .studentStatusContainer tr:nth-child(even) {
     background-color: #f4f6f7;
-}
-
-/* Stil za dugmadi za detalje */
-.detailsButton {
+  }
+  
+  /* Stil za dugmadi za detalje */
+  .detailsButton {
     background-color: #3498db;
     color: #ffffff;
     border: none;
@@ -82,20 +82,14 @@
     transition: background-color 0.3s ease;
     display: block;
     margin: 0 auto; /* Centriranje gumba unutar ćelije */
-}
-
-.detailsButton:hover {
+  }
+  
+  .detailsButton:hover {
     background-color: #2980b9;
-}
-
-/* Stil za redove tablice kad se pređe mišem */
-.subjectRow:hover {
-    background-color: #ecf0f1;
-    transition: background-color 0.3s ease;
-}
-
-/* Modal za detalje profesora */
-.modalOverlay {
+  }
+  
+  /* Modal za detalje profesora */
+  .modalOverlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -106,10 +100,10 @@
     justify-content: center;
     align-items: center;
     z-index: 1000;
-}
-
-/* Modal sadržaj */
-.modalContent {
+  }
+  
+  /* Modal sadržaj */
+  .modalContent {
     background-color: #ffffff;
     padding: 20px;
     border-radius: 8px;
@@ -117,10 +111,10 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
     position: relative;
-}
-
-/* Gumb za zatvaranje modala */
-.closeButton {
+  }
+  
+  /* Gumb za zatvaranje modala */
+  .closeButton {
     background-color: #e74c3c;
     color: #ffffff;
     border: none;
@@ -131,86 +125,108 @@
     position: absolute;
     top: 10px;
     right: 10px;
-}
-
-.closeButton:hover {
+  }
+  
+  .closeButton:hover {
     background-color: #c0392b;
-}
-
-/* Media Queries za responsivnost */
-
-/* Za uređaje manja od 400px */
-@media screen and (max-width: 400px) {
-    .studentStatusContainer table {
-        width: 100%;  /* Tablica zauzima cijeli ekran */
-        font-size: 0.8em;  /* Smanjivanje fonta */
-        table-layout: fixed;  /* Fiksni raspored stupaca */
+  }
+  
+  /* Stil za razliku između desktop i mobilnog prikaza */
+  
+  /* Desktop verzija */
+  .desktop {
+    display: inline;
+  }
+  
+  .mobile {
+    display: none;
+  }
+  
+  /* Mobile verzija */
+  @media screen and (max-width: 768px) {
+    .desktop {
+      display: none;
     }
-
+  
+    .mobile {
+      display: inline;
+    }
+  }
+  
+  /* Media Queries za responsivnost */
+  
+  /* Za uređaje manja od 400px */
+  @media screen and (max-width: 400px) {
+    .studentStatusContainer table {
+      width: 100%;  /* Tablica zauzima cijeli ekran */
+      font-size: 0.8em;  /* Smanjivanje fonta */
+      table-layout: fixed;  /* Fiksni raspored stupaca */
+    }
+  
     .studentStatusContainer th,
     .studentStatusContainer td {
-        padding: 8px 10px;  /* Manji padding */
-        word-wrap: break-word;  /* Omogućava prelamanje dugih riječi */
-        overflow-wrap: break-word;
+      padding: 8px 10px;  /* Manji padding */
+      word-wrap: break-word;  /* Omogućava prelamanje dugih riječi */
+      overflow-wrap: break-word;
     }
-
+  
     .detailsButton {
-        padding: 8px 12px;
-        font-size: 0.8em;
-        display: block;
-        margin: 0 auto; /* Centriranje gumba unutar ćelije */
+      padding: 8px 12px;
+      font-size: 0.8em;
+      display: block;
+      margin: 0 auto; /* Centriranje gumba unutar ćelije */
     }
-}
-
-/* Za uređaje manja od 600px */
-@media screen and (max-width: 600px) {
+  }
+  
+  /* Za uređaje manja od 600px */
+  @media screen and (max-width: 600px) {
     .studentStatusContainer table {
-        width: 100%;
+      width: 100%;
     }
-
+  
     .studentStatusContainer th,
     .studentStatusContainer td {
-        padding: 10px 12px;
-        font-size: 0.9em;
+      padding: 10px 12px;
+      font-size: 0.9em;
     }
-
+  
     .detailsButton {
-        padding: 8px 12px;
-        font-size: 0.9em;
+      padding: 8px 12px;
+      font-size: 0.9em;
     }
-}
-
-/* Za uređaje manja od 1024px */
-@media screen and (max-width: 1024px) {
+  }
+  
+  /* Za uređaje manja od 1024px */
+  @media screen and (max-width: 1024px) {
     .studentStatusContainer table {
-        width: 80%;
+      width: 80%;
     }
-
+  
     .studentStatusContainer th,
     .studentStatusContainer td {
-        padding: 12px 18px;
-        font-size: 1em;
+      padding: 12px 18px;
+      font-size: 1em;
     }
-
+  
     .detailsButton {
-        padding: 9px 14px;
-        font-size: 1em;
+      padding: 9px 14px;
+      font-size: 1em;
     }
-
+  
     .modalContent {
-        width: 60%;
+      width: 60%;
     }
-}
-
-/* Za desktop uređaje (šire od 1024px) */
-@media screen and (min-width: 1025px) {
+  }
+  
+  /* Za desktop uređaje (šire od 1024px) */
+  @media screen and (min-width: 1025px) {
     .studentStatusContainer table {
-        width: 70%;
+      width: 70%;
     }
-
+  
     .studentStatusContainer th,
     .studentStatusContainer td {
-        padding: 15px 20px;
+      padding: 15px 20px;
     }
-}
-/* Za desktop uređaje (šire od 1024px) */
+  }
+  

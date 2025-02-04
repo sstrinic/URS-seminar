@@ -232,7 +232,8 @@
         "Algoritmi"
       ],
       "date_of_registration": "2015-10-12",
-      "short_description": "A seasoned professor who nurtures creativity in her students, with three published novels to her name.",
+      "short_description": "Zavod za elektroniku i računarstvo",
+      "short_description1": "Katedra za računalne sustave",
       "extra_info": {
         "years_of_experience": 12,
         "publications": ["The Wanderer", "Shadows of Time", "Dreaming in Ink"]
@@ -245,7 +246,8 @@
       "role": "teacher",
       "teaching_subjects": ["Engineering", "Mechanics", "Material Science"],
       "date_of_registration": "2016-03-15",
-      "short_description": "A hands-on engineer with a knack for turning theoretical knowledge into practical solutions. Mentors students on real-world projects.",
+      "short_description": "Zavod za strojarstvo",
+      "short_description1": "Katedra za materijale",
       "extra_info": {
         "years_of_experience": 15,
         "awards": ["Best Educator Award 2022", "Innovation in Teaching 2020"]

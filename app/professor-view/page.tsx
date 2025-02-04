@@ -17,6 +17,7 @@ type Professor = {
   teaching_subjects: string[];
   date_of_registration: string;
   short_description: string;
+  short_description1: string;
 };
 
 type Student = {
@@ -50,6 +51,7 @@ const ProfessorView: React.FC = () => {
           teaching_subjects: user.teaching_subjects,
           date_of_registration: user.date_of_registration,
           short_description: user.short_description,
+          short_description1: user.short_description1,
         };
 
         setProfessorData(professor);
@@ -125,11 +127,15 @@ const ProfessorView: React.FC = () => {
 
   return (
     <div className={styles.professorStatusContainer}>
+      <div className={styles.professorStatusContainerhead}>
       <h1>Dobrodošli, {professorData.name} {professorData.surname}!</h1>
       <div className={styles.professorDetails}>
-        <p><strong>Opis:</strong> {professorData.short_description}</p>
+        <p><strong>Zavod:</strong> {professorData.short_description}</p>
+        <p><strong>Katedra:</strong> {professorData.short_description1}</p>
         <p><strong>Datum registracije:</strong> {professorData.date_of_registration}</p>
       </div>
+      </div>
+      
       <h2>Vaši kolegiji</h2>
       <table>
         <thead>
@@ -213,4 +219,4 @@ const ProfessorView: React.FC = () => {
   );
 };
 
-export default ProfessorView;
+export default ProfessorView; 

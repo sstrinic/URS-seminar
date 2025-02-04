@@ -11,6 +11,16 @@ type Course = {
   professor: string;
 };
 
+// Mapa za akronime predmeta
+const acronyms: { [key: string]: string } = {
+  'Fizika': 'FIZ',
+  'Matematika': 'MAT',
+  'Ugradbeni računalni sustavi': 'URS',
+  'Umjetna inteligencija': 'UI',
+  'Računalna grafika': 'RG',
+  'Multimedija': 'MM',
+};
+
 const fakeData: Course[] = [
   { id: 1, name: 'Fizika', attendance: 85, totalLectures: 13, professor: 'Nikola Godinović' },
   { id: 2, name: 'Matematika', attendance: 78, totalLectures: 13, professor: 'Ivan Slapničar' },
@@ -52,10 +62,18 @@ const StudentStatus: React.FC = () => {
           <tbody>
             {courses.map((course) => (
               <tr key={course.id} className={styles.courseRow}>
-                <td>{course.name}</td>
+                <td className={styles.courseName}>
+                  {/* Ako je mobilni uređaj, prikazujemo akronime, inače puni naziv predmeta */}
+                  <span className={styles.desktop}>{course.name}</span>
+                  <span className={styles.mobile}>{acronyms[course.name] || course.name}</span>
+                </td>
                 <td>{course.attendance}</td>
                 <td>
-                  <button onClick={() => handleCourseClick(course)} className={styles.detailsButton}>Klikni za više detalja</button>
+                  {/* Ako je mobilni uređaj, prikazujemo samo 'Detalji', inače 'Klikni za više detalja' */}
+                  <button onClick={() => handleCourseClick(course)} className={styles.detailsButton}>
+                    <span className={styles.desktop}>Klikni za više detalja</span>
+                    <span className={styles.mobile}>Detalji</span>
+                  </button>
                 </td>
               </tr>
             ))}
