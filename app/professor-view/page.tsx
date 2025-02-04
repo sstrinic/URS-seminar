@@ -17,7 +17,7 @@ type Professor = {
   teaching_subjects: string[];
   date_of_registration: string;
   short_description: string;
-  short_description1: string;
+  short_description1: string | undefined;
 };
 
 type Student = {
@@ -135,7 +135,7 @@ const ProfessorView: React.FC = () => {
         <p><strong>Datum registracije:</strong> {professorData.date_of_registration}</p>
       </div>
       </div>
-      
+
       <h2>Vaši kolegiji</h2>
       <table>
         <thead>
@@ -219,4 +219,4 @@ const ProfessorView: React.FC = () => {
   );
 };
 
-export default ProfessorView; 
+export default ProfessorView;
