@@ -11,7 +11,6 @@ RUN \
   else echo "Lockfile not found." && exit 1; \
   fi
 
-
 FROM base AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
@@ -23,7 +22,6 @@ RUN \
   elif [ -f pnpm-lock.yaml ]; then corepack enable pnpm && pnpm run build; \
   else echo "Lockfile not found." && exit 1; \
   fi
-
 
 FROM base AS production
 WORKDIR /app
@@ -39,6 +37,8 @@ RUN chown nextjs:nodejs .next
 
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+
+VOLUME ["/app/attendance.db"]
 
 USER nextjs
 EXPOSE 3000
